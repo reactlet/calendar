@@ -6,11 +6,16 @@ var Calendar = React.createClass({
     // attribute definitions
     getAttributes: function() {
         var attributes = [
-            { name:'boxClass', type:'string', required:false, defaultValue:'', note:'container CSS class' }
+            { name:'boxClass', type:'string', required:false, defaultValue:'', note:'container CSS class' },
+            { name:'type', type:'string', required:false, defaultValue:'month', note:'calendar ' },
+            { name:'year', type:'number', required:false, defaultValue:2015, note:'calendar year' },
+            { name:'month', type:'number', required:false, defaultValue:1, note:'calendar month' },
+            { name:'activeMonthOnly', type:'boolean', required:false, defaultValue:false, note:'show active month only' }
         ];
         return attributes;
     },
     
+    /*
     getInitialState: function() {
         return {
             year: this.props.year,
@@ -19,6 +24,7 @@ var Calendar = React.createClass({
             type: 'month'
         };
     },
+    */
     
     render: function() {
         var calendar = 'unknown calendar type';
