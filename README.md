@@ -5,6 +5,8 @@ Calendar component
 
 ![Table example](res/reactlet-calendar-demo.png)
 
+![Table events example](res/reactlet-calendar-events-demo.png)
+
 Example code:
 -------------
 ```
