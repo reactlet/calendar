@@ -1,3 +1,7 @@
+/** @jsx React.DOM */
+
+var React = require('react');
+
 // Calendar component
 var Calendar = React.createClass({
     name: 'calendar',
@@ -10,6 +14,7 @@ var Calendar = React.createClass({
             { name:'type', type:'string', required:false, defaultValue:'month', note:'calendar ' },
             { name:'year', type:'number', required:false, defaultValue:2015, note:'calendar year' },
             { name:'month', type:'number', required:false, defaultValue:1, note:'calendar month' },
+            { name:'eventsCollection', type:'array', required:false, defaultValue:[], note:'events' },
             { name:'activeMonthOnly', type:'boolean', required:false, defaultValue:false, note:'show active month only' }
         ];
         return attributes;
@@ -33,6 +38,7 @@ var Calendar = React.createClass({
                 <CalendarMonth
                     year = { this.state.year }
                     month = { this.state.month }
+                    eventsCollection = { this.state.eventsCollection }
                     activeMonthOnly={ this.state.activeMonthOnly }
                 />;
         }
@@ -49,7 +55,7 @@ var CalendarMonth = React.createClass({
         return {
             year: this.props.year,
             month: this.props.month,
-            eventsCollection: null,
+            eventsCollection: this.props.eventsCollection,
             activeMonthOnly: this.props.activeMonthOnly
         };
     },
@@ -198,3 +204,4 @@ var CalendarDay = React.createClass({
     }
 });
 
+module.exports = Calendar;
